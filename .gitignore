@@ -1,0 +1,18 @@
+# Sequencing datasets
+data/
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Analysis outputs
+results/
+logs/
+
+# Large alignment files
+*.bam
+*.bai
+*.sam
+
+# Temporary files
+*.tmp

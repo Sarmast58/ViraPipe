@@ -16,3 +16,6 @@ logs/
 
 # Temporary files
 *.tmp
+# Generated Bowtie2 indexes
+*.bt2
+*.bt2l

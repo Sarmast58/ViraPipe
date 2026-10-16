@@ -1,4 +1,4 @@
-\# ViraPipe
+# ViraPipe
 
 
 
@@ -28,7 +28,7 @@ ViraPipe is a small bioinformatics project designed to automate quality control 
 
 
 
-\## Usage
+## Usage
 
 
 
@@ -48,7 +48,7 @@ Replace `data/test\_sample.fastq` with the path to your own FASTQ file inside th
 
 
 
-\## Output
+## Output
 
 
 
@@ -64,9 +64,37 @@ Prototype: single-file FASTQ quality control is implemented and tested with a sm
 
 
 
-\## Data
+## Data
 
 
 
 Sequencing data and analysis results are excluded from Git tracking using `.gitignore`.
+## Paired-End Read Trimming with Trimmomatic
 
+ViraPipe supports preprocessing of paired-end Illumina FASTQ reads using Trimmomatic v0.39.
+
+The pipeline performs two analysis stages:
+
+1. **FastQC:** Generates sequencing quality-control reports for forward and reverse reads.
+2. **Trimmomatic:** Performs quality trimming and removes reads shorter than the specified minimum length.
+
+### Trimming Parameters
+
+- `PE` — Paired-end sequencing mode.
+- `-phred33` — Phred+33 quality-score encoding.
+- `SLIDINGWINDOW:4:20` — Trims reads when the average quality of a four-base window falls below Q20.
+- `MINLEN:25` — Discards reads shorter than 25 bases.
+
+### Example Results
+
+The pipeline was tested using the JHUAPL workshop dataset containing 329,134 paired-end reads.
+
+The standalone Trimmomatic test retained 328,053 read pairs (99.67%).
+
+### Output
+
+The pipeline produces FastQC reports in `results/fastqc/` and four trimmed FASTQ files in `results/trimmed/`.
+
+### Current Limitations
+
+Adapter removal and post-trimming quality control are not yet implemented. Reference alignment, variant calling, and consensus generation are planned future improvements.

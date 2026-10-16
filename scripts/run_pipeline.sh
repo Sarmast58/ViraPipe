@@ -27,6 +27,8 @@ fi
 # Create output directories
 mkdir -p results/fastqc
 mkdir -p results/trimmed
+# Create a directory for Bowtie2 reference indexes
+mkdir -p results/bowtie2_index
 
 echo "Step 1: Running FastQC"
 
@@ -43,6 +45,11 @@ trimmomatic PE -phred33 \
     results/trimmed/R2_unpaired.fastq.gz \
     SLIDINGWINDOW:4:20 \
     MINLEN:25
+echo "Step 3: Building Bowtie2 reference index"
+
+bowtie2-build \
+    reference/nCoV-2019.reference.fasta \
+    results/bowtie2_index/sarscov2_index
 
 echo "================================"
 echo "ViraPipe completed successfully!"

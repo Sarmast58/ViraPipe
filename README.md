@@ -1,4 +1,4 @@
-\# ViraPipe
+# ViraPipe
 
 
 
@@ -6,7 +6,7 @@ A Docker-based viral genome analysis pipeline developed using Bash and FastQC.
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -14,7 +14,7 @@ ViraPipe is a small bioinformatics project designed to automate quality control 
 
 
 
-\## Tools
+## Tools
 
 
 
@@ -28,7 +28,7 @@ ViraPipe is a small bioinformatics project designed to automate quality control 
 
 
 
-\## Usage
+## Usage
 
 
 
@@ -48,7 +48,7 @@ Replace `data/test\_sample.fastq` with the path to your own FASTQ file inside th
 
 
 
-\## Output
+## Output
 
 
 
@@ -56,7 +56,7 @@ FastQC generates an HTML quality report and a ZIP archive in `results/`.
 
 
 
-\## Current Status
+## Current Status
 
 
 

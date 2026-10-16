@@ -82,7 +82,12 @@ The high read-pair retention indicates that most input pairs passed the selected
 
 ## 4. Reference-Based Alignment
 
+### Reference Genome
+The SARS-CoV-2 reference genome used for alignment was identified by GenBank accession MN908947.3. The local FASTA file, reference/nCoV-2019.reference.fasta, contains 29,903 nucleotide characters.
 
+Bowtie2 indexes were generated from this reference using bowtie2-build. Both Bowtie2 and Minimap2 were subsequently tested against the same reference sequence.
+
+The accession and sequence length were checked locally. Exact sequence identity against the GenBank record has not yet been independently verified.
 
 Trimmed paired-end reads were aligned against the SARS-CoV-2 reference genome supplied with the workshop.
 

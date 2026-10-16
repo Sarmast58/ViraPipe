@@ -19,3 +19,5 @@ logs/
 # Generated Bowtie2 indexes
 *.bt2
 *.bt2l
+# Generated FASTA indexes
+*.fai
